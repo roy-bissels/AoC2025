@@ -1,4 +1,4 @@
-package com.roy.bissels.aoc2025.day02;
+package com.roy.bissels.aoc2025;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,7 +6,7 @@ import static com.roy.bissels.aoc2025.generic.Utils.getInput;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Day02Test {
-    private static final String RELATIVE_PATH_PREFIX = "Day02/";
+    private static final String RELATIVE_PATH_PREFIX = "02_";
     private static final Day02 Day = new Day02();
 
     @Test

@@ -1,26 +1,27 @@
 package com.roy.bissels.aoc2025.generic;
 
-import org.springframework.core.io.ClassPathResource;
-
 import java.awt.*;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class Utils {
-    public static final String PACKAGE_PREFIX = "src/test/java/com/roy/bissels/aoc2025/";
     
-    public static List<String> getInputList(String relativePath) throws IOException {
-        Path path = Paths.get(new ClassPathResource(PACKAGE_PREFIX + relativePath).getPath());
+    public static List<String> getInputList(String relativePath) throws IOException, URISyntaxException {
+        Path path = Paths.get(Objects.requireNonNull(Thread.currentThread().getContextClassLoader()
+                .getResource(relativePath)).toURI());
         return Files.readAllLines(path);
     }
 
-    public static String getInput(String relativePath) throws IOException {
-        Path path = Paths.get(new ClassPathResource(PACKAGE_PREFIX + relativePath).getPath());
+    public static String getInput(String relativePath) throws IOException, URISyntaxException {
+        Path path = Paths.get(Objects.requireNonNull(Thread.currentThread().getContextClassLoader()
+                .getResource(relativePath)).toURI());
         return Files.readString(path);
     }
 

@@ -1,4 +1,4 @@
-package com.roy.bissels.aoc2025.day03;
+package com.roy.bissels.aoc2025;
 
 import java.util.ArrayList;
 import java.util.List;
