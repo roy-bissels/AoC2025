@@ -1,5 +1,7 @@
 package com.roy.bissels.aoc2025;
 
+import com.roy.bissels.aoc2025.generic.Utils.LongPoint;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -25,7 +27,7 @@ public class Day02
     private List<Long> getInvalidIdsFromRange(LongPoint range, int part)
     {
         List<Long> invalidIds = new ArrayList<>();
-        for (long i = range.x; i <= range.y; i++) {
+        for (long i = range.x(); i <= range.y(); i++) {
             String stringValue = String.valueOf(i);
             int length = stringValue.length();
 
@@ -55,5 +57,4 @@ public class Day02
         }
     }
 
-    public record LongPoint(long x, long y){}
 }

@@ -35,4 +35,7 @@ public class Utils {
         }
         return isRollmap;
     }
+
+    public record LongPoint(long x, long y){}
+    public record LongStartEnd(long start, long end){}
 }
